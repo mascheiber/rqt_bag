@@ -86,6 +86,7 @@ class ImageTimelineRenderer(TimelineRenderer):
         :param width: width in pixels of the timeline area, ''int''
         :param height: height in pixels of the timeline area, ''int''
         """
+
         if x < self.timeline._history_left:
             width += x - self.timeline._history_left
             x = self.timeline._history_left
@@ -129,6 +130,7 @@ class ImageTimelineRenderer(TimelineRenderer):
                             thumbnail_width = available_width - 1
                     QtImage = ImageQt(thumbnail_bitmap)
                     pixmap = QPixmap.fromImage(QtImage)
+
                     painter.drawPixmap(
                         thumbnail_x, thumbnail_y, thumbnail_width, thumbnail_height, pixmap)
             thumbnail_x += thumbnail_width

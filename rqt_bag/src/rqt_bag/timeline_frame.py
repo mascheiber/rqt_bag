@@ -481,9 +481,9 @@ class TimelineFrame(QGraphicsItem):
                 if stamp_end < self._stamp_left:
                     continue
 
-                region_x_start = self._history_left + \
-                    (stamp_start - self._stamp_left) * width_interval
-                region_x_end = self._history_left + (stamp_end - self._stamp_left) * width_interval
+                region_x_start = int(self._history_left + \
+                    (stamp_start - self._stamp_left) * width_interval)
+                region_x_end = int(self._history_left + (stamp_end - self._stamp_left) * width_interval)
                 region_width = max(1, region_x_end - region_x_start)
                 renderer.draw_timeline_segment(
                     painter, topic, stamp_start, stamp_end,
